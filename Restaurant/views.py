@@ -15,6 +15,7 @@ def showRestaurants(request, restaurant_id= None):
                 serializer = RestaurantSerializer(Restaurant)
                 return Response(serializer.data)
             return Response({'error':'Restaurant not found'})
+        # new commit
         else:
             restaurants = Restaurant.objects.all()
             serializer = RestaurantSerializer(restaurants, many=True)
